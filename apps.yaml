@@ -32,7 +32,7 @@ spec:
   project: default
   source:
     repoURL: 'https://releases.rancher.com/server-charts/stable'
-    targetRevision: 'latest'
+    targetRevision: 'v2.8.5'
     chart: rancher
   destination:
     server: 'https://kubernetes.default.svc'
@@ -43,4 +43,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  revisionHistoryLimit: 5
+
