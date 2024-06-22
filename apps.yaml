@@ -32,11 +32,8 @@ spec:
   project: default
   source:
     repoURL: 'https://releases.rancher.com/server-charts/stable'
-    targetRevision: 'v2.5.8'
+    targetRevision: 'latest'
     chart: rancher
-    helm:
-      valueFiles:
-        - values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cattle-system
@@ -46,9 +43,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  ignoreDifferences:
-    - group: apps
-      kind: Deployment
-      jsonPointers:
-        - /spec/replicas
   revisionHistoryLimit: 5
