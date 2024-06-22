@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrapper
+  namespace: argocd
+spec:
+  destination:
+    namespace: graham
+    name: in-cluster
+  project: default
+  source:
+    path: ./
+    repoURL: https://github.com/Mohammad9227/argocd-apps.git
+    targetRevision: develop
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
