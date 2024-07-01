@@ -34,6 +34,9 @@ spec:
     repoURL: 'https://github.com/Mohammad9227/argocd-apps.git'
     path: rancher/
     targetRevision: develop
+    helm:
+      hostname: rancher.local
+      bootstrapPassword: admin
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cattle-system
